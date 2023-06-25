@@ -1,4 +1,4 @@
-import { fakeMenu, fakeMinimize, fakeButtons, fakeZoom, term} from "../../styles";
+import { fakeMenu, fakeMinimize, fakeButtons, fakeZoom, term} from "../../screens/homepage/styles";
 
 const Terminal = ({ children }: any) => {
     return (

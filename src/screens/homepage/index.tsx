@@ -1,20 +1,15 @@
-import About from "@/pages/about";
-import Contact from "@/pages/contact";
-import Projects from "@/pages/projects";
 import React, { useState, useContext } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { links as Links, nav_ul, nav, centre, span, left } from "./styles";
-import Terminal from "./modules/terminal";
-import { myContext } from "./modules/App-context";
-import { Header } from "./modules/Components/header";
 import { useRouter } from "next/router";
+import Terminal from "@/src/modules/terminal";
+import { Header } from "@/src/modules/Components/header";
+import { myContext } from "@/src/modules/App-context";
 const HomePage = () => {
-  const { tabs, setTabs, selectedTabs, setSelectedTabs ,setTabHandler, setSelectedTabHandler} =useContext(myContext);
+  const {tabs} =useContext(myContext);
   const router = useRouter();
   const onClickTab = (val: string) => {
     console.log(val);
-    setTabHandler(val);
-    console.log(tabs);
+    tabs.push(val);
     router.push(`/${val}`);
   };
   return (

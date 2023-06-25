@@ -1,4 +1,6 @@
+import { myContext } from "@/src/modules/App-context";
 import { css } from "@emotion/css";
+import { useContext } from "react";
 import styled from "styled-components";
 
 export const links = styled.div`
@@ -15,10 +17,19 @@ export const centre= css`
   align-self: center;
 `;
 
+export const centrehead=
+  css`
+  align-self: center;
+  background-color: #854747;
+  `;
+
 export const left= css`
   margin-left: 15px;
 `;
-
+export const header=css`
+  display: flex;
+  align-items: center;
+`;
 export const span= css`
   color: #064a06;
   font-weight: bold;
