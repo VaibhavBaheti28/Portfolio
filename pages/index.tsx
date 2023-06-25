@@ -1,8 +1,6 @@
-import { Inter } from 'next/font/google'
 import HomePage from '@/src/screens/homepage'
-
-const inter = Inter({ subsets: ['latin'] })
+import {MyContextProvider} from "../src/"
 
 export default function Home() {
-  return (<HomePage/>)
+  return (<MyContextProvider><HomePage /></MyContextProvider>);
 }
