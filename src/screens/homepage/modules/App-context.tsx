@@ -1,11 +1,16 @@
 import React,{useState, createContext} from "react";
 
-export const myContext= createContext({});
+export const myContext= createContext<Record<any,any>>({tabs: ["Home"], selectedTab: "", setTabHandler:function () {},})
 
-const MyContextProvider = ({children}: any) => {
-    const [tabs,setTabs]=useState([]);
-    const [selectedTab,setSelectedTab]=useState(undefined);
-    return <myContext.Provider value={ {tabs,setTabs, selectedTab ,setSelectedTab}}>{children}</myContext.Provider> 
+export const MyContextProvider = ({children}: any) => {
+    const [tabs,setTabs]=useState(["Home"]);
+    const [selectedTab,setSelectedTab]=useState("Home");
+    const setTabHandler =(val: string)=>{
+        console.log(val);
+        setTabs([...tabs,val]);
+    }
+    const setSelectedTabHandler =(val: string)=>{
+        setSelectedTab(val);
+    }
+    return <myContext.Provider value={ {tabs,setTabs,selectedTab,setSelectedTab,setTabHandler,setSelectedTabHandler}}>{children}</myContext.Provider> 
 }
-
-export default MyContextProvider;

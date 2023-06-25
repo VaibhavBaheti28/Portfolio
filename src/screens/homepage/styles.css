@@ -58,7 +58,6 @@ body {
     font-size: 1.25em;
     font-family: monospace;
     white-space: normal;
-    overflow: hidden;
     width: 0;
   }
   
@@ -221,4 +220,17 @@ body {
     to {
       width: 17em;
     }
+  }
+  .links{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    font-size: large;
+  }
+  .new{
+    display:flex;
+    justify-content: space-around;
+    color: blue;
   }
