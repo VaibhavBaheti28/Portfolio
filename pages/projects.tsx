@@ -21,7 +21,7 @@ const Project = () => {
     <Terminal>
       <Links>
         <Header />
-        <div className={centre}>
+        <div style={{alignSelf: "center"}}>
           <h1 style={{ color: "red" }}>Project Page</h1>
         </div>
           <div className={nav}>

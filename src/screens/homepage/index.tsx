@@ -16,7 +16,7 @@ const HomePage = () => {
     <Terminal>
       <Links>
         <Header />
-        <div className={centre}>
+        <div style={{alignSelf: "center"}}>
           <h1 style={{ color: "red" }}>Home Page</h1>
         </div>
           <div className={nav}>

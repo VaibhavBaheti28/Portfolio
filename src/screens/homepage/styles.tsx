@@ -15,12 +15,19 @@ export const links = styled.div`
 `;
 export const centre= css`
   align-self: center;
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid black;
 `;
+
 
 export const centrehead=
   css`
   align-self: center;
   background-color: #854747;
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid black;
   `;
 
 export const left= css`

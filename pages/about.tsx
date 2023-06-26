@@ -21,7 +21,7 @@ const About = () => {
     <Terminal>
       <Links>
         <Header />
-        <div className={centre}>
+        <div style={{ alignSelf: "center"}} >
           <h1 style={{ color: "red" }}>About Page</h1>
         </div>
           <div className={nav}>
