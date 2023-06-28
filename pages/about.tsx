@@ -30,8 +30,8 @@ const About = () => {
           <h1 style={{ color: "red" }}>About Page</h1>
         </div>
         <div style={{fontFamily: "Arial , san-serif", textAlign: "center"}}>
-          <h1 style={{fontSize: "28px", fontWeight: "700"}}>Welcome to my portfolio!</h1>
-          <p style={{fontSize: "16px", lineHeight: "1.5", margin: "20px auto", maxWidth: "600px"}}>
+          <h1 style={{fontSize: "28px", fontWeight: "500"}}>Welcome to my portfolio!</h1>
+          <p style={{fontSize: "16px", lineHeight: "1.5", margin: "20px auto", maxWidth: "450px"}}>
             &emsp; With a passion for web development and extensive experience, I
             specialize in crafting visually appealing and intuitive websites. I
             possess expertise in front-end and back-end development, utilizing

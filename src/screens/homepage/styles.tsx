@@ -65,6 +65,7 @@ export const fakeMenu = css`
   border-top-left-radius: 5px;
 `;
 
+
 export const fakeScreen = css`
   background-color: #151515;
   box-sizing: border-box;

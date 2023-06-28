@@ -14,14 +14,8 @@ import HomePage from "@/src/screens/homepage";
 import Terminal from "@/src/modules/terminal";
 import { Header } from "@/src/modules/Components/header";
 const Contact = () => {
-  const { tabs } = useContext(myContext);
   const router = useRouter();
-  const onClickTab = (val: string) => {
-    console.log(val);
-    //setTabHandler(val);
-    tabs.push(val);
-    router.push(`/${val}`);
-  };
+  
   return (
     <Terminal>
       <Links>
