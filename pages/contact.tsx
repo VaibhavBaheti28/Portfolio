@@ -35,7 +35,7 @@ const Contact = () => {
           <form style={{width: "100%", padding: "10px", marginBottom: "10px"}}>
             <input type="text" placeholder="Your Name" style={{width: "100%", padding: "10px", marginBottom: "10px"}}/>
             <input type="email" placeholder="Your Email" style={{width: "100%", padding: "10px", marginBottom: "10px"}}/>
-            <textarea placeholder="Your Message" style={{width: "100%", padding: "10px", marginBottom: "10px", height: "120px"}}></textarea>
+            <textarea placeholder="Your Message" style={{width: "100%", padding: "10px", marginBottom: "10px", height: "120px", maxWidth: "400px"}}></textarea>
             <button type="submit" style={{backgroundColor: "#007bff", color: "#fff", border: "none",padding: "10px 20px",cursor: "pointer"}}>Send Message</button>
           </form>
         </div>
