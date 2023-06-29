@@ -1,11 +1,18 @@
-import 'src/screens/homepage/styles.css'
-import {AppProps} from 'next/app';
-import {useEffect, useState} from 'react';
+import "src/screens/homepage/styles.css";
+import { AppProps } from "next/app";
+import { useEffect, useState } from "react";
+import MyContextProvider from "@/src/modules/app-context";
+import { AppBody } from "./styles";
 
-function App({Component, pageProps}: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   const [render, setRender] = useState(false);
   useEffect(() => setRender(true), []);
-  return render ? <Component {...pageProps} /> : null;
+  return render ? (
+    <AppBody>
+      <MyContextProvider>
+        <Component {...pageProps} />
+      </MyContextProvider>{" "}
+    </AppBody>
+  ) : null;
 }
 export default App;
-  

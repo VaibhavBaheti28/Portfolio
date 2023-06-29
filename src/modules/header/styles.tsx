@@ -3,20 +3,18 @@ import { css } from "@emotion/css";
 export const header=css`
   display: flex;
   align-items: center;
+  background-color: #444444;
 `;
 
-export const centrehead=
+export const tab= css`
+  align-self: center;
+  padding: 5px;
+`;
+
+export const activeTab=
   css`
-  align-self: center;
-  background-color: #854747;
-  padding: 5px;
-  border-radius: 5px;
-  border: 2px solid black;
+  ${tab};
+  background-image:linear-gradient(#744444,#2F4F4F);
+  border-bottom:0;
+  border-top:5px solid #744444
   `;
-export const centre= css`
-  align-self: center;
-  padding: 5px;
-  border-radius: 5px;
-  border: 2px solid black;
-`;
-

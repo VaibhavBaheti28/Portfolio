@@ -8,7 +8,7 @@ export const terminalBody = css`
   background-color: darkslategray;
 
   border-radius: 8px;
-  overflow-y: scroll;
+  overflow-y: auto;
 `;
 
 export const fakeMenu = css`
@@ -23,10 +23,10 @@ export const fakeMenu = css`
     padding: 0.5rem;
     display: flex;
     justify-self: flex-start;
-    gap:0.5rem
+    gap: 0.5rem;
   }
   h3 {
-    margin: 0  auto;
+    margin: 0 auto;
   }
 `;
 

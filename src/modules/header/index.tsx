@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { centre, centrehead, header} from "./styles";
+import { activeTab, tab as tabStyles, header } from "./styles";
 import { useRouter } from "next/router";
 import CancelRoundedIcon from "@mui/icons-material/CancelRounded";
 import { myContext } from "../app-context";
@@ -18,27 +18,29 @@ export const Header = () => {
   }, [selectedTab]);
 
   return (
-    <div className={header} style={{backgroundColor: "rgb(130, 27, 27)", margin: "2px solid red"}}>
+    <div
+      className={header}
+    >
       {tabs.map((tab: string, idx: number) => {
         console.log(idx, selectedTab);
         return idx === selectedTab ? (
           <div
             key={tab}
-            className={centrehead}
+            className={activeTab}
             onClick={() => chooseTab(idx, tab)}
           >
-            <div style={{display: "flex"}}>
+            <div style={{ display: "flex" }}>
               <p> {tab} </p>
-              <CancelRoundedIcon fontSize="small"/>
+              <CancelRoundedIcon fontSize="small" />
             </div>
           </div>
         ) : (
           <div
             key={tab}
-            className={centre}
+            className={tabStyles}
             onClick={() => chooseTab(idx, tab)}
           >
-            <div style={{display: "flex"}}>
+            <div style={{ display: "flex" }}>
               <p> {tab} </p>
               <CancelRoundedIcon fontSize="small" />
             </div>
