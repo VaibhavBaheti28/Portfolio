@@ -1,18 +1,11 @@
 import React, { useState, useContext } from "react";
 import {
   links as Links,
-  nav_ul,
-  nav,
-  centre,
-  span,
-  left,
-} from "../src/screens/homepage/styles";
+} from "../../src/screens/homepage/styles";
 
 import { useRouter } from "next/router";
-import { myContext } from "@/src/modules/App-context";
-import HomePage from "@/src/screens/homepage";
+import { myContext } from "@/src/modules/app-context";
 import Terminal from "@/src/modules/terminal";
-import { Header } from "@/src/modules/Components/header";
 const About = () => {
   const { tabs } = useContext(myContext);
   const router = useRouter();
@@ -25,7 +18,6 @@ const About = () => {
   return (
     <Terminal>
       <Links>
-        <Header />
         <div style={{ alignSelf: "center" }}>
           <h1 style={{ color: "red" }}>About Page</h1>
         </div>

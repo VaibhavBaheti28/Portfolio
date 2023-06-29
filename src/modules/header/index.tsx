@@ -1,8 +1,8 @@
 import { useContext, useEffect } from "react";
-import { myContext } from "../App-context";
-import { centre, centrehead, header} from "@/src/screens/homepage/styles";
+import { centre, centrehead, header} from "./styles";
 import { useRouter } from "next/router";
 import CancelRoundedIcon from "@mui/icons-material/CancelRounded";
+import { myContext } from "../app-context";
 
 export const Header = () => {
   let { tabs, selectedTab } = useContext(myContext);

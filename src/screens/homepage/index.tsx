@@ -1,9 +1,9 @@
-import React, { useState, useContext } from "react";
-import { links as Links, nav_ul, nav, centre, span, left } from "./styles";
+import React, { useContext } from "react";
+import { links as Links, nav_ul, nav, span, left } from "./styles";
 import { useRouter } from "next/router";
 import Terminal from "@/src/modules/terminal";
-import { Header } from "@/src/modules/Components/header";
-import { myContext } from "@/src/modules/App-context";
+import { Header } from "@/src/modules/header";
+import { myContext } from "@/src/modules/app-context";
 const HomePage = () => {
   const {tabs} =useContext(myContext);
   const router = useRouter();
@@ -13,12 +13,8 @@ const HomePage = () => {
     router.push(`/${val}`);
   };
   return (
-    <Terminal>
+    <Terminal header="HomePage">
       <Links>
-        <Header />
-        <div style={{alignSelf: "center"}}>
-          <h1 style={{ color: "red" }}>Home Page</h1>
-        </div>
           <div className={nav}>
             <div className={nav_ul}>
               <div className={`${left}`}>

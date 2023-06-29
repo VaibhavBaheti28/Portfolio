@@ -1,18 +1,13 @@
 import React, { useState, useContext } from "react";
 import {
   links as Links,
-  nav_ul,
-  nav,
-  centre,
-  span,
-  left,
-} from "../src/screens/homepage/styles";
+} from "../../src/screens/homepage/styles";
 
 import { useRouter } from "next/router";
-import { myContext } from "@/src/modules/App-context";
+import { myContext } from "@/src/modules/app-context";
 import HomePage from "@/src/screens/homepage";
 import Terminal from "@/src/modules/terminal";
-import { Header } from "@/src/modules/Components/header";
+import { Header } from "@/src/modules/header";
 
 interface Project {
   id: number;
@@ -52,7 +47,6 @@ const Project = () => {
   return (
     <Terminal>
       <Links>
-        <Header />
         <div style={{ display: "flex" }}>
           <div
             style={{
