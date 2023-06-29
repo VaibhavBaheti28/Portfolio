@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, useContext } from "react";
 import {
   fakeMenu,
   fakeMinimize,
@@ -8,6 +8,7 @@ import {
   fakeClose,
 } from "./styles";
 import { Header } from "../header";
+import { myContext } from "../app-context";
 
 const Terminal = ({
   children,
@@ -26,7 +27,7 @@ const Terminal = ({
         </section>
         <h3>{header}</h3>
       </div>
-      
+
       <Header />
       <div>{children}</div>
     </div>
