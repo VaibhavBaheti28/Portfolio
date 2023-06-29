@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import { activeTab, tab as tabStyles, header } from "./styles";
 import { useRouter } from "next/router";
 import CancelRoundedIcon from "@mui/icons-material/CancelRounded";
-import { myContext } from "../app-context";
+import { myContext } from "../my-context";
 
 export const Header = () => {
   let { tabs, selectedTab } = useContext(myContext);
@@ -18,9 +18,7 @@ export const Header = () => {
   }, [selectedTab]);
 
   return (
-    <div
-      className={header}
-    >
+    <div className={header}>
       {tabs.map((tab: string, idx: number) => {
         console.log(idx, selectedTab);
         return idx === selectedTab ? (

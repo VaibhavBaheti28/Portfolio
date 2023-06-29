@@ -1,7 +1,7 @@
 import "src/screens/homepage/styles.css";
 import { AppProps } from "next/app";
 import { useEffect, useState } from "react";
-import MyContextProvider from "@/src/modules/app-context";
+import MyContextProvider from "@/src/modules/my-context";
 import { AppBody } from "./styles";
 
 function App({ Component, pageProps }: AppProps) {
