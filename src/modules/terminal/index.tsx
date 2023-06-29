@@ -8,7 +8,6 @@ import {
   fakeClose,
 } from "./styles";
 import { Header } from "../header";
-import { myContext } from "../app-context";
 
 const Terminal = ({
   children,
