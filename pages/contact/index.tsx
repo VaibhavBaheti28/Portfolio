@@ -7,9 +7,6 @@ const Contact = () => {
     const mailBody = document?.getElementById("myTextarea")?.value || "";
     const customerName = document?.getElementById("name")?.value || "";
     const customerEmail = document?.getElementById("mail")?.value || "";
-    console.log(
-      `mailto:vaibhavbaheti28@gmail.com?body=${mailBody}&subject=${customerName}-${customerEmail}`
-    );
     return `mailto:vaibhavbaheti28@gmail.com?body=${mailBody}&subject=${customerName}-${customerEmail}`;
   };
   return (
