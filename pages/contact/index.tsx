@@ -4,9 +4,12 @@ import { links as Links } from "../../src/screens/homepage/styles";
 import Terminal from "@/src/modules/terminal";
 const Contact = () => {
   const contactSubmitHandler = () => {
-    const mailBody = document?.getElementById("myTextarea")?.value || "";
-    const customerName = document?.getElementById("name")?.value || "";
-    const customerEmail = document?.getElementById("mail")?.value || "";
+    const mailBody =
+      (document?.getElementById("myTextarea") as HTMLInputElement)?.value || "";
+    const customerName =
+      (document?.getElementById("name") as HTMLInputElement)?.value || "";
+    const customerEmail =
+      (document?.getElementById("mail") as HTMLInputElement)?.value || "";
     return `mailto:vaibhavbaheti28@gmail.com?body=${mailBody}&subject=${customerName}-${customerEmail}`;
   };
   return (
