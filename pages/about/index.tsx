@@ -8,8 +8,6 @@ const About = () => {
   const { tabs } = useContext(myContext);
   const router = useRouter();
   const onClickTab = (val: string) => {
-    console.log(val);
-    //setTabHandler(val);
     tabs.push(val);
     router.push(`/${val}`);
   };
