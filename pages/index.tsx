@@ -1,6 +1,5 @@
-import HomePage from '@/src/screens/homepage'
-import MyContextProvider from "../src/modules/app-context"
+import HomePage from "@/src/screens/homepage";
 
 export default function Home() {
-  return (<MyContextProvider><HomePage /></MyContextProvider>);
+  return <HomePage />;
 }
