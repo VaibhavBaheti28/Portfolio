@@ -8,39 +8,35 @@ import { tableRowClasses } from "@mui/material";
 export const Header = () => {
   let { tabs, setTabs, setSelectedTab, selectedTab } = useContext(myContext);
   const { push } = useRouter();
-  const chooseTab = (val: number, tab: string, tabs?: string[]) => {
-    console.log(val);
-    console.log(tabs);
+  const chooseTab = (val: number) => {
     setSelectedTab(val);
-    if (tab === "home") push(`/`);
-    else {
-      console.log(tableRowClasses);
-      tabs && setTabs(tabs || [""]);
-      push(`/${tab}`);
-    }
   };
   const onClose = (val: number) => {
     if (val === 0) return;
 
-    chooseTab(
-      tabs.length - 2,
-      tabs.filter((_tab, idx) => {
-        return idx === val;
-      })[0],
+    setTabs(
       tabs.filter((_tab, idx) => {
         return idx !== val;
       })
     );
+
+    val === selectedTab && setSelectedTab(val - 1);
   };
+
+  useEffect(() => {
+    console.log(selectedTab);
+    if (selectedTab === 0) push(`/`);
+    else {
+      console.log(tableRowClasses);
+      push(`/${tabs[selectedTab]}`);
+    }
+  }, [selectedTab]);
+
   return (
     <div className={header}>
       {tabs.map((tab: string, idx: number) => {
         return idx === selectedTab ? (
-          <div
-            key={tab}
-            className={activeTab}
-            onClick={() => chooseTab(idx, tab)}
-          >
+          <div key={tab} className={activeTab} onClick={() => chooseTab(idx)}>
             <div style={{ display: "flex" }}>
               <p> {tab} </p>
               <CancelRoundedIcon
@@ -50,11 +46,7 @@ export const Header = () => {
             </div>
           </div>
         ) : (
-          <div
-            key={tab}
-            className={tabStyles}
-            onClick={() => chooseTab(idx, tab)}
-          >
+          <div key={tab} className={tabStyles} onClick={() => chooseTab(idx)}>
             <div style={{ display: "flex" }}>
               <p> {tab} </p>
               <CancelRoundedIcon
