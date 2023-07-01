@@ -40,7 +40,7 @@ export const Header = () => {
             <div style={{ display: "flex" }}>
               <p onClick={() => chooseTab(idx)}> {tab} </p>
               <CancelRoundedIcon
-                fontSize="small"
+                fontSize="medium"
                 onClick={() => onClose(idx)}
               />
             </div>
@@ -50,7 +50,7 @@ export const Header = () => {
             <div style={{ display: "flex" }}>
               <p onClick={() => chooseTab(idx)}> {tab} </p>
               <CancelRoundedIcon
-                fontSize="small"
+                fontSize="medium"
                 onClick={() => onClose(idx)}
               />
             </div>
