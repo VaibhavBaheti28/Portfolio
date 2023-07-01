@@ -9,27 +9,38 @@ export const Header = () => {
   const { tabs, setTabs, setSelectedTab, selectedTab } = useContext(myContext);
   const { push } = useRouter();
   const chooseTab = (val: number) => {
-    selectedTab !== undefined && setSelectedTab(val);
+    localSelectedTab !== undefined && setLocalSelectedTab(val);
   };
   const onClose = (val: number) => {
     if (val === 0) return;
-    if (val === selectedTab) {
-      setSelectedTab(val - 1);
+    if (val === localSelectedTab) {
+      setLocalSelectedTab((prev) => prev - 1);
+      console.log(val);
+      console.log(selectedTab);
     }
 
-    console.log(selectedTab);
-    setTabs(
-      tabs.filter((_tab, idx) => {
+    console.log(localSelectedTab);
+
+    setLocalTabs(
+      localtabs.filter((_tab, idx) => {
         return idx !== val;
       })
     );
   };
-
   useEffect(() => {
-    if (selectedTab === 0) push(`/`);
+    console.log(localtabs);
+    console.log(localSelectedTab);
+    setTabs(localtabs);
+  }, [localtabs]);
+  useEffect(() => {
+    setSelectedTab(localSelectedTab);
+  }, [localSelectedTab]);
+  useEffect(() => {
+    console.log(selectedTab, "streig");
+    if (localSelectedTab === 0) push(`/`);
     else {
       console.log(tableRowClasses);
-      selectedTab && push(`/${tabs[selectedTab]}`);
+      localSelectedTab && push(`/${localtabs[localSelectedTab]}`);
     }
   }, [selectedTab]);
 
@@ -37,7 +48,7 @@ export const Header = () => {
     <div className={header}>
       {tabs.map((tab: string, idx: number) => {
         return idx === selectedTab ? (
-          <div key={tab} className={activeTab}>
+          <div key={tab} className={activeTab} onClick={() => chooseTab(idx)}>
             <div style={{ display: "flex" }}>
               <p onClick={() => chooseTab(idx)}> {tab} </p>
               <CancelRoundedIcon
