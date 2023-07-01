@@ -7,53 +7,43 @@ import { tableRowClasses } from "@mui/material";
 
 export const Header = () => {
   const { tabs, setTabs, setSelectedTab, selectedTab } = useContext(myContext);
-  const [localtabs, setLocalTabs] = useState(tabs);
+  const [localTabs, setLocalTabs] = useState(tabs);
   const [localSelectedTab, setLocalSelectedTab] = useState(selectedTab);
   const { push } = useRouter();
   const chooseTab = (val: number) => {
+    // console.log({ localSelectedTab, localTabs, val });
     localSelectedTab !== undefined && setLocalSelectedTab(val);
   };
   const onClose = (val: number) => {
     if (val === 0) return;
     if (val === localSelectedTab) {
-      setLocalSelectedTab((prev) => prev - 1);
-      console.log(val);
-      console.log(selectedTab);
+      setLocalSelectedTab(val - 1);
     }
-
-    console.log(localSelectedTab);
-
+    console.log(localTabs);
     setLocalTabs(
-      localtabs.filter((_tab, idx) => {
+      localTabs.filter((_tab, idx) => {
         return idx !== val;
       })
     );
   };
-
   useEffect(() => {
-    console.log(localtabs);
-    console.log(localSelectedTab);
-    setTabs(localtabs);
-  }, [localtabs]);
+    setTabs(localTabs);
+  }, [localTabs]);
   useEffect(() => {
     setSelectedTab(localSelectedTab);
-  }, [localSelectedTab]);
-  useEffect(() => {
-    console.log(selectedTab, "streig");
     if (localSelectedTab === 0) push(`/`);
     else {
-      console.log(tableRowClasses);
-      localSelectedTab && push(`/${localtabs[localSelectedTab]}`);
+      localSelectedTab && push(`/${localTabs?.[localSelectedTab] || "/"}`);
     }
   }, [localSelectedTab]);
 
   return (
     <div className={header}>
-      {tabs.map((tab: string, idx: number) => {
-        return idx === selectedTab ? (
-          <div key={tab} className={activeTab} onClick={() => chooseTab(idx)}>
+      {localTabs.map((tab: string, idx: number) => {
+        return idx === localSelectedTab ? (
+          <div key={tab} className={activeTab}>
             <div style={{ display: "flex" }}>
-              <p> {tab} </p>
+              <p onClick={() => chooseTab(idx)}> {tab} </p>
               <CancelRoundedIcon
                 fontSize="small"
                 onClick={() => onClose(idx)}
@@ -61,9 +51,9 @@ export const Header = () => {
             </div>
           </div>
         ) : (
-          <div key={tab} className={tabStyles} onClick={() => chooseTab(idx)}>
+          <div key={tab} className={tabStyles}>
             <div style={{ display: "flex" }}>
-              <p> {tab} </p>
+              <p onClick={() => chooseTab(idx)}> {tab} </p>
               <CancelRoundedIcon
                 fontSize="small"
                 onClick={() => onClose(idx)}
