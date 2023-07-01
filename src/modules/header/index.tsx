@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useState, useContext, useEffect } from "react";
 import { activeTab, tab as tabStyles, header } from "./styles";
 import { useRouter } from "next/router";
 import CancelRoundedIcon from "@mui/icons-material/CancelRounded";
@@ -6,31 +6,46 @@ import { myContext } from "../my-context";
 import { tableRowClasses } from "@mui/material";
 
 export const Header = () => {
-  let { tabs, setTabs, setSelectedTab, selectedTab } = useContext(myContext);
+  const { tabs, setTabs, setSelectedTab, selectedTab } = useContext(myContext);
+  const [localtabs, setLocalTabs] = useState(tabs);
+  const [localSelectedTab, setLocalSelectedTab] = useState(selectedTab);
   const { push } = useRouter();
   const chooseTab = (val: number) => {
-    setSelectedTab(val);
+    localSelectedTab !== undefined && setLocalSelectedTab(val);
   };
   const onClose = (val: number) => {
     if (val === 0) return;
+    if (val === localSelectedTab) {
+      setLocalSelectedTab((prev) => prev - 1);
+      console.log(val);
+      console.log(selectedTab);
+    }
 
-    setTabs(
-      tabs.filter((_tab, idx) => {
+    console.log(localSelectedTab);
+
+    setLocalTabs(
+      localtabs.filter((_tab, idx) => {
         return idx !== val;
       })
     );
-
-    val === selectedTab && setSelectedTab(val - 1);
   };
 
   useEffect(() => {
-    console.log(selectedTab);
-    if (selectedTab === 0) push(`/`);
+    console.log(localtabs);
+    console.log(localSelectedTab);
+    setTabs(localtabs);
+  }, [localtabs]);
+  useEffect(() => {
+    setSelectedTab(localSelectedTab);
+  }, [localSelectedTab]);
+  useEffect(() => {
+    console.log(selectedTab, "streig");
+    if (localSelectedTab === 0) push(`/`);
     else {
       console.log(tableRowClasses);
-      push(`/${tabs[selectedTab]}`);
+      localSelectedTab && push(`/${localtabs[localSelectedTab]}`);
     }
-  }, [selectedTab]);
+  }, [localSelectedTab]);
 
   return (
     <div className={header}>
