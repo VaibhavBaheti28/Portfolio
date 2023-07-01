@@ -46,7 +46,7 @@ const Project = () => {
   };
 
   return (
-    <Terminal>
+    <Terminal header="My Projects">
       <Links>
         <div style={{ display: "flex" }}>
           <div

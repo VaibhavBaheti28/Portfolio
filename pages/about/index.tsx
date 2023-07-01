@@ -12,11 +12,8 @@ const About = () => {
     router.push(`/${val}`);
   };
   return (
-    <Terminal>
+    <Terminal header="About Me">
       <Links>
-        <div style={{ alignSelf: "center" }}>
-          <h1 style={{ color: "red" }}>About Page</h1>
-        </div>
         <div style={{ textAlign: "center" }}>
           <h1 style={{ fontSize: "28px", fontWeight: "500" }}>
             Welcome to my portfolio!
