@@ -16,6 +16,7 @@ const HomePage = () => {
   return (
     <Terminal header="HomePage">
       <Links>
+        <h1 style={{ textAlign: "center" }}>Welcome to My Portfolio!!</h1>
         <div className={optionContainer}>
           {Object.values(homeOptions).map((item, idx) => {
             return (

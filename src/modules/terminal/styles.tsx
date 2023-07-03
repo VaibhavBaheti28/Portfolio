@@ -5,8 +5,9 @@ export const terminalBody = css`
 
   width: 80%;
   min-height: 30rem;
-  background-color: darkslategray;
-
+  background-color: transparent;
+  border: 2px solid #3e3535;
+  opacity: 8;
   border-radius: 8px;
   overflow-y: auto;
 `;
@@ -16,9 +17,9 @@ export const fakeMenu = css`
   display: flex;
   width: 100%;
   height: 25px;
-  background-color: #bbb;
+  background-color: #1e1c1c;
   top: 0;
-  color: grey;
+  color: green;
   section {
     padding: 0.5rem;
     display: flex;

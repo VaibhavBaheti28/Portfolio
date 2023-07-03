@@ -3,7 +3,8 @@ import { css } from "@emotion/css";
 export const header = css`
   display: flex;
   align-items: center;
-  background-color: #444444;
+  color: white;
+  border-bottom: 0.5px solid #544d4d;
 `;
 
 export const tab = css`
@@ -13,7 +14,6 @@ export const tab = css`
 
 export const activeTab = css`
   ${tab};
-  background-image: linear-gradient(#744444, #2f4f4f);
+  background-image: linear-gradient(#692020, #1e2020);
   border-bottom: 0;
-  border-top: 5px solid #744444;
 `;

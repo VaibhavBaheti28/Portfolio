@@ -6,7 +6,7 @@ export default function Document() {
       <Head />
       <body
         style={{
-          backgroundImage: `url(https://wallpaperaccess.com/full/5651992.png)`,
+          backgroundImage: `url(https://wallpaperaccess.com/full/1857085.jpg)`,
         }}
       >
         <Main />
