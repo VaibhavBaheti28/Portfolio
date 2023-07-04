@@ -3,7 +3,7 @@ import { css } from "@emotion/css";
 export const terminalBody = css`
   align-items: center;
 
-  width: 80%;
+  width: 60%;
   min-height: 30rem;
   background-color: transparent;
   border: 2px solid #3e3535;

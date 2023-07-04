@@ -3,7 +3,6 @@ import { activeTab, tab as tabStyles, header } from "./styles";
 import { Router, useRouter } from "next/router";
 import CancelRoundedIcon from "@mui/icons-material/CancelRounded";
 import { myContext } from "../my-context";
-import { tableRowClasses } from "@mui/material";
 
 export const Header = () => {
   const { tabs, setTabs, setSelectedTab, selectedTab } = useContext(myContext);
