@@ -6,11 +6,13 @@ import { myContext } from "@/src/modules/my-context";
 import HomePage from "@/src/screens/homepage";
 import Terminal from "@/src/modules/terminal";
 import { Header } from "@/src/modules/header";
+import { url } from "inspector";
 
 interface Project {
   id: number;
   name: string;
   description: string;
+  url?: string;
 }
 
 const projects: Project[] = [
@@ -20,6 +22,7 @@ const projects: Project[] = [
     description: `A React application with a focus on deployment and hosting the website on Git Pages. a React application hosted on Git Pages to showcase a collection of Pokémon cards along with detailed
     information about each Pokémon. Demonstrated proficiency in React, API integration, and front-end development
     in a real-world project `,
+    url: "https://vaibhavbaheti28.github.io/Pokemon/",
   },
   {
     id: 2,
@@ -34,8 +37,6 @@ const projects: Project[] = [
 ];
 
 const Project = () => {
-  const router = useRouter();
-
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const handleProjectClick = (project: Project) => {
@@ -43,7 +44,7 @@ const Project = () => {
   };
 
   return (
-    <Terminal>
+    <Terminal header="My Projects">
       <Links>
         <div style={{ display: "flex" }}>
           <div
@@ -72,7 +73,16 @@ const Project = () => {
           <div style={{ flex: "3", paddingLeft: "10px" }}>
             {selectedProject ? (
               <div>
-                <h3>{selectedProject.name}</h3>
+                <a
+                  href={selectedProject.url}
+                  style={{
+                    textAlign: "center",
+                    fontSize: "18px",
+                    color: "hotpink",
+                  }}
+                >
+                  {selectedProject.name}
+                </a>
                 <p>{selectedProject.description}</p>
               </div>
             ) : (

@@ -5,21 +5,12 @@ import { useRouter } from "next/router";
 import { myContext } from "@/src/modules/my-context";
 import Terminal from "@/src/modules/terminal";
 const About = () => {
-  const { tabs } = useContext(myContext);
-  const router = useRouter();
-  const onClickTab = (val: string) => {
-    tabs.push(val);
-    router.push(`/${val}`);
-  };
   return (
-    <Terminal>
+    <Terminal header="About Me">
       <Links>
-        <div style={{ alignSelf: "center" }}>
-          <h1 style={{ color: "red" }}>About Page</h1>
-        </div>
         <div style={{ textAlign: "center" }}>
           <h1 style={{ fontSize: "28px", fontWeight: "500" }}>
-            Welcome to my portfolio!
+            Hello, I&apos;m Vaibhav.
           </h1>
           <p
             style={{
@@ -29,13 +20,12 @@ const About = () => {
               maxWidth: "450px",
             }}
           >
-            &emsp; With a passion for web development and extensive experience,
-            I specialize in crafting visually appealing and intuitive websites.
-            I possess expertise in front-end and back-end development, utilizing
-            the latest technologies and industry best practices. From clean code
-            and responsive layouts to seamless user experiences, I ensure that
-            every project exceeds expectations. Let&apos;s collaborate and bring
-            your ideas to life with an amazing web presence.
+            &emsp;My name is Vaibhav Baheti, and I&apos;m currently a sophomore
+            at NITK. I am deeply passionate about web development and aspire to
+            become a skilled web developer. In addition to my love for coding, I
+            also enjoy immersing myself in the world of gaming and indulging in
+            captivating TV shows. Feel free to explore my work and learn more
+            about my journey in the web development realm.
           </p>
         </div>
       </Links>

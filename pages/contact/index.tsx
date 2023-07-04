@@ -13,11 +13,8 @@ const Contact = () => {
     return `mailto:vaibhavbaheti28@gmail.com?body=${mailBody}&subject=${customerName}-${customerEmail}`;
   };
   return (
-    <Terminal>
+    <Terminal header="Contact Me">
       <Links>
-        <div style={{ alignSelf: "center" }}>
-          <h1 style={{ color: "red" }}>Contact Page</h1>
-        </div>
         <div
           style={{
             textAlign: "center",
