@@ -5,12 +5,6 @@ import { useRouter } from "next/router";
 import { myContext } from "@/src/modules/my-context";
 import Terminal from "@/src/modules/terminal";
 const About = () => {
-  const { tabs } = useContext(myContext);
-  const router = useRouter();
-  const onClickTab = (val: string) => {
-    tabs.push(val);
-    router.push(`/${val}`);
-  };
   return (
     <Terminal header="About Me">
       <Links>

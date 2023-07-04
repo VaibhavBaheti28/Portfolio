@@ -37,8 +37,6 @@ const projects: Project[] = [
 ];
 
 const Project = () => {
-  const router = useRouter();
-
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const handleProjectClick = (project: Project) => {

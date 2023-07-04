@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import { activeTab, tab as tabStyles, header } from "./styles";
-import { useRouter } from "next/router";
+import { Router, useRouter } from "next/router";
 import CancelRoundedIcon from "@mui/icons-material/CancelRounded";
 import { myContext } from "../my-context";
 import { tableRowClasses } from "@mui/material";
@@ -25,9 +25,8 @@ export const Header = () => {
     );
   };
   useEffect(() => {
-    if (selectedTab === 0) push(`/`);
+    if (selectedTab === 0) push("/");
     else {
-      console.log(tableRowClasses);
       selectedTab && push(`/${tabs[selectedTab]}`);
     }
   }, [selectedTab]);
