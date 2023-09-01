@@ -34,13 +34,27 @@ export const Header = () => {
     <div className={header}>
       {tabs.map((tab: string, idx: number) => {
         return idx === selectedTab ? (
-          <div key={tab} className={activeTab}>
+          tab === "home" ? (
+            <div key={tab} className={activeTab}>
+              <div style={{ display: "flex" }}>
+                <p onClick={() => chooseTab(idx)}> {tab} </p>
+              </div>
+            </div>
+          ) : (
+            <div key={tab} className={activeTab}>
+              <div style={{ display: "flex" }}>
+                <p onClick={() => chooseTab(idx)}> {tab} </p>
+                <CancelRoundedIcon
+                  fontSize="medium"
+                  onClick={() => onClose(idx)}
+                />
+              </div>
+            </div>
+          )
+        ) : tab === "home" ? (
+          <div key={tab} className={tabStyles}>
             <div style={{ display: "flex" }}>
               <p onClick={() => chooseTab(idx)}> {tab} </p>
-              <CancelRoundedIcon
-                fontSize="medium"
-                onClick={() => onClose(idx)}
-              />
             </div>
           </div>
         ) : (

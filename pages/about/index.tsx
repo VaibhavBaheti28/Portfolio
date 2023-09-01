@@ -1,8 +1,5 @@
 import React, { useState, useContext } from "react";
 import { links as Links } from "../../src/screens/homepage/styles";
-
-import { useRouter } from "next/router";
-import { myContext } from "@/src/modules/my-context";
 import Terminal from "@/src/modules/terminal";
 const About = () => {
   return (
