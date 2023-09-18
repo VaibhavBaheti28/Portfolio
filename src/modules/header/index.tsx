@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import { activeTab, tab as tabStyles, header } from "./styles";
-import { Router, useRouter } from "next/router";
+import { useRouter } from "next/router";
 import CancelRoundedIcon from "@mui/icons-material/CancelRounded";
 import { myContext } from "../my-context";
 
@@ -28,7 +28,12 @@ export const Header = () => {
     else {
       selectedTab && push(`/${tabs[selectedTab]}`);
     }
+    if (tabs.length > 1)
+      localStorage.setItem("selected-tab", JSON.stringify(selectedTab));
   }, [selectedTab]);
+  useEffect(() => {
+    if (tabs.length > 1) localStorage.setItem("tabs", JSON.stringify(tabs));
+  }, [tabs]);
 
   return (
     <div className={header}>

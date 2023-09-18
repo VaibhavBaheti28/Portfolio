@@ -9,9 +9,13 @@ export const myContext = createContext({
   setSelectedTab: (val: number) => {},
 });
 
-const MyContextProvider = ({ children }: any) => {
-  const [tabs, setTabs] = useState(["home"]);
-  const [selectedTab, setSelectedTab] = useState(0);
+const MyContextProvider = ({
+  children,
+  initialTabs = ["home"],
+  initialSelectedTab = 0,
+}: any) => {
+  const [tabs, setTabs] = useState(initialTabs);
+  const [selectedTab, setSelectedTab] = useState(initialSelectedTab);
   const value = useMemo(
     () => ({ tabs, setTabs, selectedTab, setSelectedTab }),
     [tabs, selectedTab]
